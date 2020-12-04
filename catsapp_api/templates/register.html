@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <h3>Welcome to the everything cats app.</h3>
+        <h3>Your gateway to unlimited cat/kitten pictures.</h3>
+        <h3>Because everyone deserves to smile today</h3>
+        <h2>Register Here</h2>
+
+        <form method = 'POST'>
+            {{ user_form.hidden_tag() }}
+            <div class="form-group">
+                <fieldset>
+                    {{ user_form.name.label }}
+                    {{ user_form.name(class = 'form-control', placeholder = "Full Name Here") }}
+                </fieldset>
+                <fieldset>
+                    {{ user_form.email.label }}
+                    {{ user_form.email(class = 'form-control', placeholder = "Email Here") }}
+                </fieldset>
+                <fieldset>
+                    {{ user_form.password.label }}
+                    {{ user_form.password(class = 'form-control', placeholder = "Password Here") }}
+                </fieldset>
+                <fieldset>
+                    {{ user_form.confirm_pass.label }}
+                    {{ user_form.confirm_pass(class = 'form-control', placeholder = "Confirm Your Password") }}
+                </fieldset>
+                {{ user_form.submit(class = 'btn btn-success') }}
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Add a Fact about Cats</h1>
+        <form method="POST">
+            {{post_form.hidden_tag() }}
+            <div class="form-group">
+                <fieldset>
+                    {{ post_form.title.label }}
+                    {{ post_form.title(class = "form-control", placeholder = "Add a Title") }}
+                </fieldset>
+
+                <fieldset>
+                    {{ post_form.content.label }}
+                    {{ post_form.content(class = "form-control", placeholder = "Add a Content") }}
+                </fieldset>
+                {{ post_form.submit(class = "btn btn-success") }}
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}

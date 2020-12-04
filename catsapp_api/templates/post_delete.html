@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{{ url_for('home') }}">
+        <button class="btn btn-primary">Back to Home</button>
+    </a>
+
+    <div class="container">
+        <h1>This post belongs to: {{ post.author.username }}</h1>
+        <hr>
+        <h3>Post Info: </h3>
+        <hr>
+        <h3>Title: {{ post.title }}</h3>
+        <p>Content: {{ post.content }}</p>
+
+        <blockquote>Date Created: {{ post.date_created }}</blockquote>
+
+        <a href="{{ url_for('post_update', post_id = post.id) }}">
+            <button class="btn btn-primary">Update Cat Facts</button>
+        </a>
+
+        <!-- Add Delete Button URL -->
+        <a href="{{ url_for('post_delete', post_id = post.id) }}">
+            <button class="btn btn-danger">Delete Cat Facts</button>
+        </a>
+    </div>
+
+{% endblock content %}
